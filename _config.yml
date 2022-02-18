@@ -44,17 +44,19 @@ navbar-links:
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "sadeqihojjatollah@gmail.com"
+  ORCID: 0000-0001-5852-4198
+  
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: sadeqihojjatollah
+  #facebook: sadeqihojjatollah
   github: sadeqihojjatollah
   twitter: Sadeqi_Hojjat
-  patreon: sadeqihojjatollah
+  #patreon: sadeqihojjatollah
  # youtube: c/daattali
 #  medium: yourname
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
-  stackoverflow: "21113783/sadeqi"
+#  stackoverflow: "21113783/sadeqi"
 #  snapchat: deanat78
   instagram: sadeqihojjatollah
 #  spotify: yourname
@@ -63,9 +65,9 @@ social-network-links:
 #  twitch: yourname
 #  yelp: yourname
 #  telegram: yourname
-  calendly: sadeqihojjatollah
+#  calendly: sadeqihojjatollah
 #  mastodon: instance.url/@username
-  ORCID: 0000-0001-5852-4198
+#  ORCID: 0000-0001-5852-4198
   google-scholar: "citations?hl=en&user=6CrkN94AAAAJ&view_op=list_works&sortby=title"
 #  discord: invite/invite_code or users/userid 
 

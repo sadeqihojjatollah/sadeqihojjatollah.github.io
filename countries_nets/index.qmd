@@ -1,0 +1,244 @@
+---
+title: "World Governance Network"
+---
+
+## Introduction
+
+The World Governance Network is derived from World Bank data on governance indicators.For now, we are focusing on high-income countries.
+
+
+## World Governance Indicators
+
+The following governance indicators were taken into account when compiling these networks:
+
+1.  Voice & Accountability
+
+2.  Political Stability and Lack of Violence
+
+3.  Government Effectiveness
+
+4.  Regulatory Quality
+
+5.  Rule of Law
+
+6.  Control of Corruption
+
+## Data
+
+Below is a link to the data.
+
+<https://databank.worldbank.org/source/worldwide-governance-indicators>
+
+## R Codes for World Governance Clustering
+
+```R
+#| warning: false
+library(tidyverse)
+library(networkD3)
+library(visNetwork)
+library(igraph)
+gov <- read.csv("C:/Users/user/Desktop/WGN/WorldGN/high_income.csv",
+                row.names=1)
+gov <- na.omit(gov)
+hc <- hclust(dist(gov),"ave")
+dendroNetwork(hc,
+              height = 6000,
+              width = 4000#,treeOrientation="vertical"
+              )
+
+rad <- as.radialNetwork(hc, '')
+radialNetwork(List = rad,
+              height = 4000,
+              width = 4000,
+              fontSize = 8)
+
+gdist<- as.matrix(dist(gov,
+                       method = "euclidean",
+                       diag = FALSE,
+                       upper = FALSE,
+                       p = 2))
+gnet <- graph_from_adjacency_matrix(
+  gdist,
+  mode ="undirected",
+  weighted = TRUE,
+  diag = TRUE,
+  add.colnames = NULL,
+  add.rownames = NA
+)
+gmst<- mst(gnet)
+data <- toVisNetworkData(gmst)
+visNetwork(nodes = data$nodes, edges = data$edges, height = "1000px",fontSize = 16)
+```
+
+
+## High-Income Countries
+
+```{r}
+#| warning: false
+#| echo: false
+library(tidyverse)
+library(networkD3)
+library(visNetwork)
+library(igraph)
+gov <- read.csv("C:/Users/user/Desktop/WGN/WorldGN/high_income.csv",
+                row.names=1)
+gov <- na.omit(gov)
+hc <- hclust(dist(gov),"ave")
+dendroNetwork(hc,
+              height = 6000,
+              width = 4000#,treeOrientation="vertical"
+              )
+
+rad <- as.radialNetwork(hc, '')
+radialNetwork(List = rad,
+              height = 4000,
+              width = 4000,
+              fontSize = 8)
+
+
+gdist<- as.matrix(dist(gov,
+                       method = "euclidean",
+                       diag = FALSE,
+                       upper = FALSE,
+                       p = 2))
+gnet <- graph_from_adjacency_matrix(
+  gdist,
+  mode ="undirected",
+  weighted = TRUE,
+  diag = TRUE,
+  add.colnames = NULL,
+  add.rownames = NA
+)
+gmst<- mst(gnet)
+data <- toVisNetworkData(gmst)
+visNetwork(nodes = data$nodes, edges = data$edges, height = "1000px",fontSize = 16)
+```
+
+## Upper-Middle-Income Countries
+
+```{r}
+#| warning: false
+#| echo: false
+library(tidyverse)
+library(networkD3)
+library(visNetwork)
+library(igraph)
+gov <- read.csv("C:/Users/user/Desktop/WGN/WorldGN/upper_middle_income.csv",
+                row.names=1)
+gov <- na.omit(gov)
+hc <- hclust(dist(gov),"ave")
+dendroNetwork(hc,
+              height = 6000,
+              width = 4000#,treeOrientation="vertical"
+              )
+
+rad <- as.radialNetwork(hc, '')
+radialNetwork(List = rad,
+              height = 4000,
+              width = 4000,
+              fontSize = 8)
+
+
+gdist<- as.matrix(dist(gov,
+                       method = "euclidean",
+                       diag = FALSE,
+                       upper = FALSE,
+                       p = 2))
+gnet <- graph_from_adjacency_matrix(
+  gdist,
+  mode ="undirected",
+  weighted = TRUE,
+  diag = TRUE,
+  add.colnames = NULL,
+  add.rownames = NA
+)
+gmst<- mst(gnet)
+data <- toVisNetworkData(gmst)
+visNetwork(nodes = data$nodes, edges = data$edges, height = "1000px",fontSize = 16)
+```
+
+## Lower-Middle-Income Countries
+
+```{r}
+#| warning: false
+#| echo: false
+library(tidyverse)
+library(networkD3)
+library(visNetwork)
+library(igraph)
+gov <- read.csv("C:/Users/user/Desktop/WGN/WorldGN/lower_middle_income.csv",
+                row.names=1)
+gov <- na.omit(gov)
+hc <- hclust(dist(gov),"ave")
+dendroNetwork(hc,
+              height = 6000,
+              width = 4000#,treeOrientation="vertical"
+              )
+
+rad <- as.radialNetwork(hc, '')
+radialNetwork(List = rad,
+              height = 4000,
+              width = 4000,
+              fontSize = 8)
+
+
+gdist<- as.matrix(dist(gov,
+                       method = "euclidean",
+                       diag = FALSE,
+                       upper = FALSE,
+                       p = 2))
+gnet <- graph_from_adjacency_matrix(
+  gdist,
+  mode ="undirected",
+  weighted = TRUE,
+  diag = TRUE,
+  add.colnames = NULL,
+  add.rownames = NA
+)
+gmst<- mst(gnet)
+data <- toVisNetworkData(gmst)
+visNetwork(nodes = data$nodes, edges = data$edges, height = "1000px",fontSize = 16)
+```
+
+## Low-Income Countries
+
+```{r}
+#| warning: false
+#| echo: false
+library(tidyverse)
+library(networkD3)
+library(visNetwork)
+library(igraph)
+gov <- read.csv("C:/Users/user/Desktop/WGN/WorldGN/low_income.csv",
+                row.names=1)
+gov <- na.omit(gov)
+hc <- hclust(dist(gov),"ave")
+dendroNetwork(hc,
+              height = 6000,
+              width = 4000#,treeOrientation="vertical"
+              )
+
+rad <- as.radialNetwork(hc, '')
+radialNetwork(List = rad,
+              height = 4000,
+              width = 4000,
+              fontSize = 8)
+
+
+gdist<- as.matrix(dist(gov,
+                       method = "euclidean",
+                       diag = FALSE,
+                       upper = FALSE,
+                       p = 2))
+gnet <- graph_from_adjacency_matrix(
+  gdist,
+  mode ="undirected",
+  weighted = TRUE,
+  diag = TRUE,
+  add.colnames = NULL,
+  add.rownames = NA
+)
+gmst<- mst(gnet)
+data <- toVisNetworkData(gmst)
+visNetwork(nodes = data$nodes, edges = data$edges, height = "1000px",fontSize = 16)
+```

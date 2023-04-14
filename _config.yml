@@ -19,8 +19,7 @@ navbar-links:
   Presentations:
   Projects:
    - Governance Nets: "/countries_nets/index.html"
-   - DoreLab: "/DoreLab/DoreLabSOP.html"
-  C.V.: "Sadeqi_CV.html"
+  #C.V.: "Sadeqi_CV.html"
   #Resources:
     #- Beautiful Jekyll: "https://beautifuljekyll.com"
     #- Learn markdown: "https://www.markdowntutorial.com/"
